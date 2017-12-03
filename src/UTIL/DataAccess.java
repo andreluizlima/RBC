@@ -25,7 +25,7 @@ public class DataAccess {
             FileReader arq = new FileReader(path);
             BufferedReader lerArq = new BufferedReader(arq);
             String linha = lerArq.readLine();
-            String atb[] = linha.split(",");
+            String atb[] = linha.split(";");
             while (linha != null) {
                 Base b = new Base();
                 String aux[];
@@ -33,9 +33,9 @@ public class DataAccess {
                 if (linha == null) {
                     break;
                 }
-                aux = linha.split(",");
+                aux = linha.split(";");
                 for (int i = 0; i < aux.length; i++) {
-                    b.getBaseData().add(new AtbValue(atb[i], aux[i]));
+                    b.getAtbValues().add(new AtbValue(atb[i], aux[i]));
                 }
                 getBaseCompleta().getBase().add(b);
             }
@@ -62,7 +62,7 @@ public class DataAccess {
                 if (linha == null) {
                     break;
                 }
-                aux = linha.split(",");
+                aux = linha.split(";");
                 getBaseCompleta().getPesos().put(aux[0], Integer.parseInt(aux[1]));
                 //System.out.println(baseCompleta.getPesos().get(aux[0]));
             }
@@ -89,7 +89,7 @@ public class DataAccess {
                 if (linha == null) {
                     break;
                 }
-                aux = linha.split(",");
+                aux = linha.split(";");
                 if("-".equals(aux[0])){ 
                     int n = getBaseCompleta().getAtributos().size();
                     getBaseCompleta().getAtributos().get(n-1).addValor(aux[1],aux[2]);

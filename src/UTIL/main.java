@@ -15,7 +15,7 @@ public class main {
         teste.setBase("base.csv");
         teste.setPesos("pesos.csv");
         teste.setAtributos("atributos.csv");
-        Atributo at = teste.getBaseCompleta().getAtributos().get(0);
-        System.out.println(at.getValor().get(teste.getAtrbName().get(1)));
+        Base at = teste.getBaseCompleta().getBase().get(1);
+        System.out.println(at.getAtbValues().get(5).toString());
     }
 }

@@ -3,26 +3,28 @@ package UTIL;
 import java.util.ArrayList;
 
 public class Base {
+
+
    
-   private static int id = 1;
-   private ArrayList<AtbValue> baseData;
+   public static int id = 0;
+   private ArrayList<AtbValue> atbValues;
    private int idP;
+   private double sg;
    
    public Base(){
-       baseData = new ArrayList<>();
+       atbValues = new ArrayList<>();
        idP=id;
        id++;
    }
-    public ArrayList<AtbValue> getBaseData() {
-        return baseData;
+    public ArrayList<AtbValue> getAtbValues() {
+        return atbValues;
     }
-    public void setBaseData(ArrayList<AtbValue> baseData) {
-        this.baseData = baseData;
+    public void setAtbValues(ArrayList<AtbValue> baseData) {
+        this.atbValues = baseData;
     }
-    public void toStringA(){
-        for(int i=0; i<baseData.size();i++ ){
-            System.out.println(baseData.get(i).toString());
-        }
+   @Override
+    public String toString(){
+        return "Caso: "+idP+"  | SG: "+sg;
     }
 
     public int getId() {
@@ -30,6 +32,14 @@ public class Base {
     }
     public void setId(int idP) {
         this.idP = idP;
+    }
+
+    public double getSg() {
+        return sg;
+    }
+
+    public void setSg(double sg) {
+        this.sg = sg;
     }
    
    

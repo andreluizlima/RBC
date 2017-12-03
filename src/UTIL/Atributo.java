@@ -18,7 +18,7 @@ public class Atributo {
     public void setAtributo(String atributo) {
         this.atributo = atributo;
     }
-    public void addValor(String valor, String nome){        
+    public void addValor(String valor, String nome){ 
         this.valor.put(valor, nome);
         //System.out.println("Valor: "+valor+"     Nome: "+nome);
     }
